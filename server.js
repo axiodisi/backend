@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const Database = require("@replit/database");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -8,13 +9,12 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 const db = new Database();
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware
 app.use(cors());
-app.use(express.json());
-
-// Use the JWT secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET;
+app.use(bodyParser.json());
 
 // Helper function to generate JWT
 const generateToken = (userId) => {
@@ -92,7 +92,6 @@ app.get('/protected', (req, res) => {
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
