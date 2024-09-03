@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const { Client } = require('@replit/database');
+const Database = require("@replit/database");
 
 const app = express();
-const db = new Client();
+const db = new Database();
 
 // Middleware
 app.use(cors());
