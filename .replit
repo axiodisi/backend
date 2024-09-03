@@ -1,4 +1,5 @@
-run = "npm run dev"
+language = "nodejs"
+run = "npm start"
 
 [nix]
 channel = "stable-24_05"
