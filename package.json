@@ -1,20 +1,21 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend server for your project",
+  "description": "Backend server for your project using Replit DB",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.19.2",
-    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^6.0.0"
+    "@replit/database": "^2.0.2"
   },
   "keywords": [
     "backend",
     "express",
     "node",
-    "mongodb"
+    "replit-db"
   ],
   "author": "Your Name",
   "license": "ISC"
